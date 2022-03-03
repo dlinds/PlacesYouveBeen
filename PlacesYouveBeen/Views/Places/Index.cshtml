@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Places / Index</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+  @using PlacesYouveBeen.Models;
+  <div class="container">
+    <h1>Your places</h1>
+    <ul>
+
+      @foreach (Place place in Model)
+      {
+        <li>@place.CityName (@place.Id) @place.LengthVisited days<img src="@place.Image" style="width:200px;"><a href='/places/delete/@place.Id'><em>Delete</em></a></li>
+      }
+    </ul>
+    <a href="/places/new">Add a place</a>
+  </div>
+</body>
+
+</html>
+
+@*
+
+  [0]Portland ID: 1
+  [1]Seattle ID: 2
+  [2]Vancounver ID: 3
+  [3]Phoenix ID:4
+
+
+*@
